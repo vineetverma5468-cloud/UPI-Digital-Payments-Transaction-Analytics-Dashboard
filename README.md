@@ -1,16 +1,16 @@
 # UPI Transaction Analytics Dashboard
 
-A professional, git-ready analytics dashboard for digital payments built with Python and Streamlit. The project simulates UPI transaction activity, cleans the data, and presents operational insights through an interactive dashboard that can be run locally or deployed to a cloud hosting service.
+A professional, git-ready analytics dashboard for digital payments built with Python and Streamlit. The project uses a realistic public-data-style UPI transaction schema, cleans the data, and presents operational insights through an interactive dashboard that can be run locally or deployed to a cloud-hosting service.
 
 ![Status](https://img.shields.io/badge/status-live-brightgreen)
 ![Stack](https://img.shields.io/badge/stack-Python%20%2B%20Streamlit%20%2B%20Plotly-blue)
-![Data](https://img.shields.io/badge/data-synthetic%20UPI%20transactions-orange)
+![Data](https://img.shields.io/badge/data-public%20style%20UPI%20dataset-orange)
 
 ---
 
 ## Overview
 
-This project analyzes synthetic UPI transaction data to track:
+This project analyzes a realistic public-data-style UPI transaction dataset to track:
 - transaction volume and value trends
 - payment success and failure patterns
 - peak load times by hour of day
@@ -49,7 +49,7 @@ UPI-Digital-Payments-Transaction-Analytics-Dashboard/
 │   ├── cleaning_report.txt     # Data cleaning summary
 │   └── images/                 # Generated EDA charts
 ├── scripts/
-│   ├── 01_generate_data.py     # Synthetic data generation
+│   ├── 01_generate_data.py     # Realistic public-style data generation
 │   ├── 02_clean_data.py        # Cleaning logic and validation
 │   └── 03_eda.py               # Summary charts and insights
 └── .venv/ or environment setup
@@ -59,7 +59,7 @@ UPI-Digital-Payments-Transaction-Analytics-Dashboard/
 
 ## Data Model
 
-The project uses a realistic synthetic star schema:
+The project uses a realistic public-data-style star schema:
 
 - fact_transactions
 - dim_banks
@@ -107,7 +107,7 @@ pip install -r requirements.txt
 ### 2. Generate data
 
 ```bash
-a python scripts/01_generate_data.py
+python scripts/01_generate_data.py
 ```
 
 ### 3. Clean data

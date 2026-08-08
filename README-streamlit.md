@@ -11,7 +11,7 @@ streamlit run app.py
 
 ## Recommended workflow
 
-1. Generate the synthetic dataset
+1. Generate the realistic public-style dataset
 2. Clean the raw data
 3. Run the EDA summary script
 4. Launch the Streamlit dashboard
@@ -35,4 +35,4 @@ This dashboard is suitable for:
 
 ## Project purpose
 
-The dashboard focuses on UPI transaction analytics, operational health, failure analysis, merchant trends, and regional performance using a realistic synthetic dataset.
+The dashboard focuses on UPI transaction analytics, operational health, failure analysis, merchant trends, and regional performance using a realistic public-style dataset.

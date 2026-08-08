@@ -77,7 +77,7 @@ def main() -> None:
         f"Rows with negative amounts corrected using absolute value: {negative_amount_count}",
         "Standardized app names to consistent title case naming.",
         "Normalized status values and filled empty failure reasons with 'Unknown'.",
-        "Converted timestamp/date fields to valid datetime format for Power BI modeling.",
+        "Converted timestamp/date fields to valid datetime format for dashboard analysis.",
     ]
 
     with (DOCS_DIR / "cleaning_report.txt").open("w", encoding="utf-8") as report_file:

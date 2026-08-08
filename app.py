@@ -9,6 +9,16 @@ import streamlit as st
 ROOT = Path(__file__).resolve().parent
 DATA_DIR = ROOT / "data" / "processed"
 
+
+def format_indian_currency(value: float) -> str:
+    abs_value = abs(value)
+    if abs_value >= 1_00_00_000:
+        return f"₹{value / 1_00_00_000:.2f} Cr"
+    if abs_value >= 1_00_000:
+        return f"₹{value / 1_00_000:.2f} L"
+    return f"₹{value:,.2f}"
+
+
 st.set_page_config(page_title="UPI Transaction Analytics Dashboard", page_icon="💸", layout="wide")
 st.title("UPI / Digital Payments Transaction Analytics Dashboard")
 
@@ -19,9 +29,21 @@ def load_data():
     regions = pd.read_csv(DATA_DIR / "dim_regions.csv")
     dates = pd.read_csv(DATA_DIR / "dim_date.csv")
 
-    merged = fact.merge(merchants, on="merchant_id", how="left")
-    merged = merged.merge(regions, on="region_id", how="left")
-    merged = merged.merge(dates, left_on="date_id", right_on="date_id", how="left")
+    fact = fact.drop(columns=[c for c in ["merchant_category", "zone", "state"] if c in fact.columns], errors="ignore")
+
+    merged = fact.merge(
+        merchants[["merchant_id", "merchant_name", "merchant_category"]],
+        on="merchant_id",
+        how="left",
+        suffixes=("", "_dim"),
+    )
+    merged = merged.merge(
+        regions[["region_id", "state", "zone"]],
+        on="region_id",
+        how="left",
+        suffixes=("", "_dim"),
+    )
+    merged = merged.merge(dates, on="date_id", how="left")
     return merged
 
 
@@ -32,7 +54,7 @@ status_counts = data["status"].value_counts().rename_axis("status").reset_index(
 # KPI cards
 col1, col2, col3, col4 = st.columns(4)
 col1.metric("Total Transactions", f"{len(data):,}")
-col2.metric("Transaction Value", f"₹{data['amount'].sum():,.2f}")
+col2.metric("Transaction Value", format_indian_currency(data["amount"].sum()))
 col3.metric("Success Rate", f"{(data['is_success'].mean() * 100):.2f}%")
 col4.metric("Failed Transactions", f"{data['is_failed'].sum():,}")
 

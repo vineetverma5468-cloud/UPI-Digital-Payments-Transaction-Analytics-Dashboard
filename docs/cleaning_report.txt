@@ -1,9 +1,9 @@
 UPI Transaction Data Cleaning Report
 ===================================
-Original transaction rows: 20100
-Duplicate rows removed: 100
-Rows with missing device_type filled with 'Unknown': 185
+Original transaction rows: 22000
+Duplicate rows removed: 0
+Rows with missing device_type filled with 'Unknown': 0
 Rows with negative amounts corrected using absolute value: 0
 Standardized app names to consistent title case naming.
 Normalized status values and filled empty failure reasons with 'Unknown'.
-Converted timestamp/date fields to valid datetime format for Power BI modeling.
+Converted timestamp/date fields to valid datetime format for dashboard analysis.

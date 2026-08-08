@@ -1,0 +1,16 @@
+region_id,state,zone
+1,Maharashtra,West
+2,Gujarat,West
+3,Rajasthan,North
+4,Punjab,North
+5,Delhi,North
+6,Uttar Pradesh,North
+7,Bihar,East
+8,West Bengal,East
+9,Odisha,East
+10,Tamil Nadu,South
+11,Karnataka,South
+12,Kerala,South
+13,Telangana,South
+14,Madhya Pradesh,Central
+15,Uttarakhand,Central

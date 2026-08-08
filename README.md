@@ -86,7 +86,8 @@ The raw data intentionally includes realistic issues, cleaned in `02_clean_data.
 
 ```bash
 # 1. Clone the repo
-git clone <your-repo-url>
+git clone https://github.com/vineetverma5468-cloud/UPI-Digital-Payments-Transaction-Analytics-Dashboard.git
+
 cd upi-payments-dashboard
 
 # 2. Install dependencies
@@ -220,4 +221,4 @@ Save the file as `dashboard/upi_dashboard.pbix`. Export a few screenshots to
 ---
 
 ## 👤 Author
-[Your Name] — Business Economics student | [LinkedIn] | [Portfolio]
+Vineet Verma — MBA student | [[LinkedIn](https://www.linkedin.com/in/vineet-verma-b44bb6253/)] 

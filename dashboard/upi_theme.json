@@ -1,0 +1,26 @@
+{
+  "name": "UPI Finance Theme",
+  "dataColors": ["#1F5EFF", "#00B894", "#FF6B6B", "#1E90FF", "#F7B267", "#7B2CBF", "#2D6A4F", "#E76F51"],
+  "background": "#F7F9FC",
+  "foreground": "#1F2937",
+  "tableAccent": "#1F5EFF",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "title": [
+          {
+            "show": true,
+            "fontSize": 13,
+            "color": { "solid": { "color": "#1F2937" } }
+          }
+        ],
+        "labels": [
+          {
+            "color": { "solid": { "color": "#1F2937" } },
+            "fontSize": 11
+          }
+        ]
+      }
+    }
+  }
+}
